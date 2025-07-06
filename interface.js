@@ -34,7 +34,7 @@ const els = {
     totalCloning: 'Total Cloned: ',
     adjustedRealEstateRate: 'Real Estate Markup: ',
     adjustedRentalRate: 'Rental Markup: ',
-    adjustedVehicleRate: 'Vehicle Resell Markup: '
+    adjustedVehicleRate: 'Vehicle Markup: '
   }
 }
 
