@@ -1,0 +1,349 @@
+body {
+  font-family: Arial, sans-serif;
+  background-size: cover;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.group p, body {
+  font-size: 0.9rem;
+}
+
+#clusterBlobs, #levers {
+  position: absolute; 
+  top:0; 
+}
+
+#clusterBlobs {
+  left:0; 
+  width:100%; 
+  height:100%; 
+  z-index:0;
+}
+
+#levers {
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  width: 25vw;
+  z-index: 100;
+  background-color: rgba(1, 1, 1, 0.5);
+  color: #eee;
+  padding: 15px;
+  border-bottom-left-radius: 5px;
+}
+
+.group {
+  background-color: rgba(2, 2, 2, 0.2);
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.group p > span, #simulationSpeedFriendly {
+  display: inline-block;
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+.group > div {
+  margin-bottom: 5px;
+}
+
+.group > p {
+  margin-bottom: 2px;
+}
+
+input[type=range] {
+  width: 90%;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: normal;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: rgba(255, 240, 23, 0.9);
+}
+#zoomWrapper {
+  background: linear-gradient(180deg, rgba(255,255, 255, 0.2) 10%, rgba(255, 255, 255, 0));
+  position: absolute;
+  border-radius: 20px;
+  width: 70vw;
+  height: 80vh;
+  margin: 10px;
+  overflow: hidden;
+  min-width: 500px;
+  box-shadow: rgba(1, 1, 1, 0.5) 2px 2px -5px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+#community {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+#sim_false {
+  display: none;
+}
+
+#community > div.view {
+  margin: 5px;
+  min-width: 30px;
+  height: 60px;
+  position: absolute;
+  padding: 5px;
+  box-shadow: rgba(15, 15, 15, 0.637) 1px 1px 15px;
+  border-radius: 70% 30% 70% 30% / 50% 60% 40% 30%;
+  transition: left 0.1s linear, top 0.1s linear;
+}
+
+#community div.view .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.mouth {
+  border-top: 1px solid #fff;
+}
+
+span {
+  display: block;
+}
+
+.dependents {
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  font-size: 1rem;
+  color: #fff;
+  right: 5px;
+}
+
+.pregnancy {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 25px;
+  height: 25px;
+  font-size: 2rem;
+  left: 20px;
+  border-radius: 70% 30% 70% 30% / 50% 60% 40% 50%;
+}
+
+.stats {
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+}
+
+.stats div {
+  letter-spacing: -8px;
+  width: 100%;
+}
+
+#personal {
+  font-size: 1rem;
+  margin-right: 10px;
+  max-width: 300px;
+  text-overflow: ellipsis;
+}
+
+#personal span {
+  margin-bottom: 5px;
+}
+
+.name {
+  color: #fff;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  padding: 5px 8px;
+  text-shadow: #111 1px 1px 4px;
+  z-index: 5;
+}
+
+section {
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  padding-bottom: 30px;
+}
+
+.details {
+  position: absolute;
+  border: 1px solid #111;
+  background: linear-gradient(0deg, rgba(1, 1, 1, 0.3), rgba(1, 1, 1, 0.7));
+  border-radius: 20px;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  margin: 10px;
+  height: 13vh;
+  min-width: 500px;
+  max-width: 65vw;
+  width: 100%;
+  display: flex;
+  z-index: 30;
+  color: #eee;
+  flex-direction: row;
+  overflow-y: scroll;
+  padding: 10px 20px;
+}
+
+.status {
+  display: none;
+	position: absolute;
+	background: #ffffff;
+	border-radius: .5em;
+  width: 40px;
+  height: 30px;
+  top: -35px;
+  left: 40px;
+  text-align: center;
+  font-size: 1.2rem;
+  filter: drop-shadow( -1px 0 2px rgba(0, 0, 0, .5));
+  filter: drop-shadow( -1px 0 2px rgba(0, 0, 0, .5));
+}
+
+.status:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 0.625em solid transparent;
+	border-top-color: #ffffff;
+	border-bottom: 0;
+	border-left: 0;
+	margin-left: -0.312em;
+	margin-bottom: -0.625em;
+}
+
+.status.active {
+  display: block;
+}
+
+.sideview {
+  display: flex;
+  flex-direction: column;
+}
+
+.sideview.full {
+  padding-bottom: 10px;
+  padding-right: 20px;
+  width: 60%;
+}
+
+.details.active, .creditcards, .relationshipview, .petsview, .rentalsview, .realestateview, .vehiclesview {
+  display: flex;
+}
+
+.relationshipview, .creditcards, .petsview, .rentalsview, .realestateview, .vehiclesview {
+  margin-bottom: 2px;
+  flex-direction: row;
+  position: relative;
+  font-size: 30px;
+  flex-wrap: wrap;
+}
+
+.view > span {
+  margin: 1px;
+}
+
+.details .avatar, .view > span {
+  filter: drop-shadow( -1px 0 2px rgba(255, 255, 255, 0.6));
+  filter: drop-shadow( -1px 0 2px rgba(255, 255, 255, 0.6));
+}
+
+.avatar {
+  position: absolute;
+  top: -10px;
+  filter: drop-shadow( -1px 0 2px rgba(0, 0, 0, .5));
+  filter: drop-shadow( -1px 0 2px rgba(0, 0, 0, .5));
+}
+
+.details .avatar {
+  position: relative;
+  display: block;
+  top: 0;
+}
+
+.details .dependent {
+  position: relative;
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+.details .dependent .info {
+  position: absolute;
+  top: 0;
+  left: 31px;
+  z-index: 5;
+  width: 100px;
+  background-color: #111;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  display: none;
+}
+
+.details .dependent.active .info {
+  display: block;
+}
+
+#totalCloning {
+  float: right;
+}
+
+.infected {
+  border: 2px dashed #0f0;
+  background-color: #0f9;
+}
+
+button#cloner {
+  margin-bottom: 10px;
+  margin-top: 5px;
+  border-radius: 3px;
+  background-color: rgb(68, 0, 255);
+  color: #f8f8f8;
+  border: 0;
+  font-size: 1rem;
+  padding: 5px 10px;
+}
+
+button#cloner:hover {
+  background-color: rgb(13, 97, 150);
+  color: #a9ff39;
+}
+
+button#cloner:active {
+  background-color: rgb(255, 150, 239);
+  color: #f51515;
+}
+
+button#cloner[disabled=disabled], button#cloner[disabled=disabled]:hover, button#cloner[disabled=disabled]:active {
+  background-color: #74747459;
+  color: #eee;
+}
+
+#currentdate {
+  font-size: 1.2rem;
+  color: rgba(255, 75, 180, 0.604);
+  padding: 5px;
+}
+
+#roads > * {
+  filter: drop-shadow( -1px 0 3px rgba(0, 0, 0, .8));
+  filter: drop-shadow( -1px 0 3px rgba(0, 0, 0, .8));
+}

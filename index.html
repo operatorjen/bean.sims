@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ecosystem Sim</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, height=device-height, user-scalable=no, initial-scale=0.95, maximum-scale=0.95, minimum-scale=0.95, target-densitydpi=device-dpi" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script type="module" src="eco.min.js" defer></script>
+  </head>
+  <body>
+    <svg id="clusterBlobs"></svg>
+    
+    <div id="levers">
+      <div id="currentdate"></div>
+      <p>Simulation Speed <span id="simulationSpeedFriendly">1x</span></p>
+      <input type="range" id="simulationSpeed" min="1" max="9" value="1" />
+
+      <h2>Ecosystem Stats</h2>
+      <div class="group">
+        <div id="population">Population: 0</div>
+        <div id="deathAvg">Average Age of Death: ?</div>
+        <div id="netWorthAvg">Average Net Worth: 0</div>
+        <div id="incomeAvg">Average Income: 0</div>
+        <div id="totalTaxes">Taxes Collected: 0</div>
+        <div id="totalRealEstate">Real Estate Purchased: 0</div>
+        <div id="totalVehicles">Vehicles Purchased: 0</div>
+        <div id="totalBirths">Total Births: 0</div>
+        <div id="totalMedicalFees">Total Medical Fees: 0</div>
+        <div id="totalVetFees">Total Vet Fees: 0</div>
+        <div id="totalDiscretionary">Total Discretionary Spent: 0</div>
+        <div id="adjustedRealEstateRate">Real Estate Markup: 0%</div>
+        <div id="adjustedRentalRate">Rental Markup: 0%</div>
+        <div id="adjustedVehicleRate">Vehicle Markup: 0%</div>
+      </div>
+
+      <h2>Population Management</h2>
+      <div class="group">
+        <button id="cloner">Clone BeanSims x 3</button>
+        <div id="totalCloning">Total Cloned: 0</div>
+        <p>Reproduction Chance <span id="reproductionChanceFriendly">75%</span></p>
+        <input type="range" id="reproductionChance" min="0.01" max="0.99" step="0.01" value="0.75"  />
+        <p>Pathogen Threshold <span id="pathogenThresholdFriendly">0</span></p>
+        <input type="range" id="pathogenThreshold" min="0" max="20" value="0"  />
+        <p>Pathogen Chance <span id="pathogenChanceFriendly">0%</span></p>
+        <input type="range" id="pathogenChance" min="0.0" max="0.05" step="0.0001" value="0.0001"  />
+      </div>
+
+      <h2>Ecosystem Levers</h2>
+      <div class="group">
+        <p>Inflation Rate <span id="inflationRateFriendly"></span></p>
+        <input type="range" id="inflationRate" min="0.01" max="0.2" step="0.01" value="0.025"  />
+        <p>Real Estate Available <span id="realEstateCapFriendly">50</span></p>
+        <input type="range" id="realEstateCap" min="5" max="100" value="50" step="5" />
+        <p>Rentals Available <span id="rentalCapFriendly">100</span></p>
+        <input type="range" id="rentalCap" min="10" max="300" value="100" step="10" />
+        <p>Vehicles Available <span id="vehicleCapFriendly">300</span></p>
+        <input type="range" id="vehicleCap" min="100" max="500" value="500" step="10" />
+        <p>Pets Available <span id="petsCapFriendly">200</span></p>
+        <input type="range" id="petsCap" min="50" max="400" value="200" step="50" />
+      </div>
+    </div>
+    <div id="zoomWrapper">
+      <svg id="roads" width="100%" height="100%" style="position:absolute; top:0; left:0; z-index:1;"></svg>
+      <svg id="buildingsLayer" style="position:absolute; z-index:1; width:100%; height:100%;"></svg>
+      <div id="community"></div>
+    </div>
+    <div id="details" class="details">
+      <div id="personal" class="sideview">
+        <span class="name"></span>
+        <span class="networth"></span>
+        <span class="creditscore"></span>
+      </div>
+      <div class="sideview full">
+        <div class="view relationshipview"></div>
+        <div class="view petsview"></div>
+        <div class="view rentalsview"></div>
+        <div class="view realestateview"></div>
+        <div class="view vehiclesview"></div>
+      </div>
+    </div>
+  </body>
+</html>
