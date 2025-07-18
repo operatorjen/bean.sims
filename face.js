@@ -9,7 +9,7 @@ export function generateFace(s,z=60){
   const{traits:t,conditions:c,birthYear:y}=s,
         R=makeRNG(`${t.physical}${t.mental}${t.spiritual}${c.anxiety}${c.health}`),
         x=z/2,m=AGE(y),svg=document.createElementNS(NS,'svg'),
-        a=t.physical+t.mental+t.spiritual+c.anxiety+c.health,N=(30+50*c.anxiety)|0;
+  a=t.physical+t.mental+t.spiritual+c.anxiety+c.health,N=(30+50*c.anxiety)|0;
   svg.setAttribute('class','avatar');
   svg.setAttribute('viewBox',`0 0 ${z} ${z}`);
   svg.setAttribute('width',z);
