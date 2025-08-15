@@ -349,127 +349,14 @@ button#cloner[disabled=disabled], button#cloner[disabled=disabled]:hover, button
   filter: drop-shadow( -1px 0 3px rgba(0, 0, 0, .8));
 }
 
-
-h1, h3, time, button {
-  position: fixed;
-  top: 10px;
-  right: 0;
-  z-index: 1;
-  font-size: 0.95rem;
-  font-weight: 200;
-  background-color: rgba(1, 1, 1, 0.8);
-  color: #fff;
-  padding: 5px 10px;
-  border-bottom-left-radius: 5px;
-  border-top-left-radius: 5px;
-  display: inline-block;
-}
-
-#world {
-  position: fixed;
-  left: 10px;
-  top: 30vh;
-  bottom: 20vh;
-  width: 50vw;
-  min-width: 300px;
-  z-index: 101;
-  overflow: auto;
-}
-
-#world h1 {
-  background-color: rgb(255, 0, 123);
-  color: #0ff;
-  font-weight: 300;
-  font-family: monospace;
-  font-size: 1rem;
-  letter-spacing: 1px;
-  padding: 5px;
-  margin: 10px;
-  position: absolute;
-  right: -10px;
-  top: 10px;
-}
-
 #world {
   background: linear-gradient(45deg, rgba(215, 46, 234, 0.677), rgba(32, 32, 195, 0.3));
-  filter: blur(15px);
-  color: white;
-
-  border: calc(var(--gate) * 1px) solid hsl(var(--h) 90% 55%);
-  border-radius: calc(8px + var(--depth) * 4px);
-  box-shadow: 0 10px calc(10px + var(--depth) * 4px) hsl(var(--h) 70% 40% / 0.45);
-
-  animation: sag-pulse calc(1.5s + (4s * (1 - var(--reveal)))) ease-in-out infinite alternate;
-  transform-origin: 50% 55%;
-  padding: 1rem 1.25rem;
-  transition: filter .3s ease, transform .3s ease, background-position .6s ease;
-  background-size: 200% 200%;
-}
-
-#world[data-sag-wind="1"] {
-  animation-name: sag-pulse, sag-sway;
-  animation-duration: calc(1.5s + (4s * (1 - var(--reveal)))), calc(6s - 2s * var(--spawn));
-  animation-timing-function: ease-in-out, linear;
-  animation-iteration-count: infinite;
-  background-position: 0% 0%;
-}
-
-#world[data-sag-day="1"] {
-  filter: brightness(1.1) saturate(1.15);
-}
-#world[data-sag-day="0"] {
-  filter: brightness(0.85) saturate(1.0);
-}
-
-#world[data-sag-facet="0"] { backdrop-filter: none; }
-#world[data-sag-facet="3"] { backdrop-filter: contrast(1.1) }
-#world[data-sag-facet="6"] { backdrop-filter: contrast(1.2) blur(1px) }
-
-#motifs {
-  display: flex;
-  flex-wrap: wrap;
-  width: 72vw;
 }
 
 #motifs span {
-  text-transform: uppercase;
-  min-width: 90px;
-  margin-right: 5px;
-  margin-bottom: 3px;
-  display: block;
-  padding: 10px;
-  border-radius: 3px;
-  color: #fff;
-  text-shadow: rgba(1, 1, 1, 0.5) 1px 1px 5px;
-  border-bottom-left-radius: 20px;
-  border-top-left-radius: 20px;
-  text-indent: 5px;
-  box-shadow: rgba(29, 15, 238, 0.4) 2px 2px 2px;
   background: linear-gradient(90deg, rgba(6, 186, 99, 0.85) 60%, rgba(28, 243, 214, 0.1));
-}
-
-#knobs {
-  list-style-type: none;
-  text-align: left;
-  width: 70vw;
-  padding-left: 0;
 }
 
 #knobs li {
   background-color: rgb(9, 117, 164);
-  padding: 10px;
-  margin: 3px 0;
-  border-radius: 3px;
-  width: 200px;
-  text-align: center;
-}
-
-@keyframes sag-pulse {
-  from { transform: scale(1); }
-  to   { transform: scale(calc(1 + var(--spawn) * 0.14)));
-}
-@keyframes sag-sway {
-  0%   { transform: translateX(-2px) rotate(-0.4deg) scale(calc(1 + var(--spawn) * 0.14)); background-position: 0% 0%; }
-  50%  { transform: translateX( 2px) rotate( 0.4deg) scale(calc(1 + var(--spawn) * 0.14)); background-position: 100% 100%; }
-  100% { transform: translateX(-2px) rotate(-0.4deg) scale(calc(1 + var(--spawn) * 0.14)); background-position: 0% 0%; }
 }
