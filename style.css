@@ -351,6 +351,7 @@ button#cloner[disabled=disabled], button#cloner[disabled=disabled]:hover, button
 
 #world {
   background: linear-gradient(45deg, rgba(215, 46, 234, 0.677), rgba(32, 32, 195, 0.3));
+  box-shadow: rgba(15, 238, 126, 0.4) 2px 2px 2px;
 }
 
 #motifs span {
@@ -359,4 +360,7 @@ button#cloner[disabled=disabled], button#cloner[disabled=disabled]:hover, button
 
 #knobs li {
   background-color: rgb(9, 117, 164);
+  background: radial-gradient(circle at 80% 30%, rgba(205, 168, 24, 0.7) 10%, rgba(39, 32, 255, 0.9) 100%);
+  box-shadow: rgba(63, 167, 153, 0.58) -13px -2px 2px;
+  color: #b7fff5;
 }
