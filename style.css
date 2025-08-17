@@ -364,3 +364,8 @@ button#cloner[disabled=disabled], button#cloner[disabled=disabled]:hover, button
   box-shadow: rgba(63, 167, 153, 0.58) -13px -2px 2px;
   color: #b7fff5;
 }
+
+#home:hover {
+  background-color: rgba(8, 239, 108, 0.8);
+  color: rgb(255, 0, 123);
+}
